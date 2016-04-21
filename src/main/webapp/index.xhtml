@@ -1,0 +1,38 @@
+	<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:b="http://bootsfaces.net/ui"
+		xmlns:p="http://primefaces.org/ui">
+		<h:head>
+			<script name="jquery/jquery.js" library="primefaces"></script>
+			<title>Register Employee</title>
+		</h:head>
+		
+		<h:body>
+			<b:navBar brand="Brand" brandHref="index.xhtml" inverse="true">
+			    <b:navbarLinks>
+			        <b:navLink value="Main" href="main.xhtml"></b:navLink>
+			        <b:navLink value="Link" href="#"></b:navLink>
+			        <b:navLink value="Link" href="#"></b:navLink>
+			    </b:navbarLinks>
+			</b:navBar>
+		
+			<h:form>
+					<fieldset>
+						<legend>Inscription</legend>
+						<p:growl id="messages"></p:growl>
+						<p:panelGrid columns="2">
+							<p:outputLabel value="Name:"></p:outputLabel>
+							<p:inputText value="#{registerEmployee.employee.employeeName}"></p:inputText>
+							<p:outputLabel value="Date:"></p:outputLabel>
+							<p:calendar value="#{registerEmployee.employee.employeeHireDate}"></p:calendar>
+							<p:outputLabel value="Salary:"></p:outputLabel>
+							<p:inputText value="#{registerEmployee.employee.employeeSalary}"></p:inputText>						
+						</p:panelGrid>
+						<b:commandButton value="Register" action="#{registerEmployee.register}" update="messages" look="primary"></b:commandButton>
+					</fieldset>
+			</h:form>
+		</h:body>
+
+	</html>	
